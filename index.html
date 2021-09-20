@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+<style>
+  body{
+    background-image: url("https://bit.ly/3laHXXm");
+    background-size: cover;
+    font-variant: petite-caps;
+    font-weight: 600
+  }
+  h1,label{
+    color : aqua
+  }
+  output {
+    color: black;
+    font-weight: 600;
+    border-style: solid;
+    background-color: floralwhite;
+    font-size: unset;
+    border-radius: 10px;
+    width: 2in;
+}
+  ul{
+    text-align: justify;
+    color: aqua;
+    font-weight: 700
+  }
+  select{
+    width: 2in
+  }
+</style>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+ <body>
+   <div class="login">
+	<center><h1>Surge Price Prediction</h1></center>
+  <center>  
+     <!-- Main Input For Receiving Query to our ML -->
+    <form id="Formid" action="http://127.0.0.1:5000/predict" method="post">
+    <div class="form-group">
+      <label for="Type_of_cab">Type_of_cab:</label><br>	  
+      <select name="Type_of_cab" class="sr-only" id="Type_of_cab">
+              <option value=" "> </option>
+              <option value="0">A</option>
+              <option value="1">B</option>
+              <option value="2">C</option>
+              <option value="3">D</option>
+              <option value="4">E</option>
+      </select><br>
+      <br>
+    </div>
+    <div class="form-group">
+            <label for="Gender">Gender:</label><br>	  
+      <select name="Gender" id="Type_of_cab">
+              <option value=" "> </option>
+              <option value="1">Male</option>
+              <option value="0">Female</option>
+      </select><br>
+      <br>
+    </div>
+    <div class="form-group">
+            <label for="Destination_Type">Destination_Type:</label><br>
+      <select name="Destination_Type" id="Destination_Type">
+              <option value=" "> </option>
+              <option value="0">A</option>
+              <option value="1">B</option>
+              <option value="2">C</option>
+              <option value="3">D</option>
+              <option value="4">E</option>
+              <option value="5">F</option>
+              <option value="6">G</option>
+              <option value="7">H</option>
+              <option value="8">I</option>
+              <option value="9">J</option>
+              <option value="10">K</option>
+              <option value="11">L</option>
+              <option value="12">M</option>
+              <option value="13">N</option>
+      </select><br>  
+      <br>    
+    </div>
+    <div class="form-group">   
+      <label>Trip_Distance:</label><br>
+    	<input type="number" step="any" name="Trip_Distance" required="required"><br>
+      <br>
+    </div>
+    <div class="form-group">
+      <label>Life_Style_Index:</label><br>
+      <input type="text" name="Life_Style_Index" required="required"><br>
+      <br>
+    </div>
+    <div class="form-group">
+		  <label>Customer_Rating:</label><br>
+      <input type="number" step="any" name="Customer_Rating" required="required"><br>
+      <br>
+    </div>
+    <div class="form-group">
+		  <label>Var3:</label><br>
+      <input type="number" name="Var3" required="required"><br>
+      <br>
+    </div>
+    <div class="form-group">
+		  <label>Customer_Since_Months:</label><br>
+      <input type="number" name="Customer_Since_Months" required="required"><br>
+      <br>
+    </div>
+    <div class="form-group">
+		  <label>Cancellation_Last_1Month:</label><br>
+      <input type="number" name="Cancellation_Last_1Month" required="required"><br>
+      <br>
+    </div>
+    <div class="form-group">
+      <label>Confidence_Life_Style_Index:</label><br>   
+       <select name="Confidence_Life_Style_Index" id="Confidence_Life_Style_Index">
+        <option value=" "> </option>
+        <option value="0">A</option>
+        <option value="1">B</option>
+        <option value="2">C</option>
+       </select><br>
+      <br>
+    </div>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        <br>
+    </form>
+
+   <br>
+   <br>
+  <center>
+    <output>
+      The surge price is 3.0</output> 
+    <ul>
+      <li><span>1= High price range</span> </li>
+      <li><span>2= Low price range</span></li>
+      <li><span>3= Medium price range</span></li>
+    </ul>
+    <br>
+    <br>
+  </center>
+  </center>
+ </div>
+
+
+
+</body></html>
